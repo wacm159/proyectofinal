@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52e6325810c14f49b551c29cf0871c02" Name="Diagram1">
+        <EntityTypeShape EntityType="FacturadorModel.Bodega" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacturadorModel.Comprobante" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacturadorModel.ComprobanteDetalle" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacturadorModel.Producto" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="FacturadorModel.FK_Producto_Bodega" ManuallyRouted="false" />
+        <AssociationConnector Association="FacturadorModel.FK_ComprobanteDetalle_Comprobante1" ManuallyRouted="false" />
+        <AssociationConnector Association="FacturadorModel.FK_ComprobanteDetalle_Producto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

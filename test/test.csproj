@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44380</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -190,14 +192,49 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BodegasController.cs" />
+    <Compile Include="Controllers\ComprobanteDetallesController.cs" />
+    <Compile Include="Controllers\ComprobantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bodega.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comprobante.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComprobanteDetalle.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturadorModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturadorModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturadorModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacturadorModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturadorModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MetaData.cs" />
+    <Compile Include="Models\MetaDataTypeAttribute.cs" />
+    <Compile Include="Models\partialClassMetadata.cs" />
+    <Compile Include="Models\Producto.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -208,10 +245,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\FacturadorModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturadorModel.edmx</DependentUpon>
+      <LastGenOutput>FacturadorModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FacturadorModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturadorModel.edmx</DependentUpon>
+      <LastGenOutput>FacturadorModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\FacturadorModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FacturadorModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FacturadorModel.edmx.diagram">
+      <DependentUpon>FacturadorModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -258,6 +312,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Bodegas\Create.cshtml" />
+    <Content Include="Views\Bodegas\Delete.cshtml" />
+    <Content Include="Views\Bodegas\Details.cshtml" />
+    <Content Include="Views\Bodegas\Edit.cshtml" />
+    <Content Include="Views\Bodegas\Index.cshtml" />
+    <Content Include="Views\Productoes\Create.cshtml" />
+    <Content Include="Views\Productoes\Delete.cshtml" />
+    <Content Include="Views\Productoes\Details.cshtml" />
+    <Content Include="Views\Productoes\Edit.cshtml" />
+    <Content Include="Views\Productoes\Index.cshtml" />
+    <Content Include="Views\Comprobantes\Create.cshtml" />
+    <Content Include="Views\Comprobantes\Delete.cshtml" />
+    <Content Include="Views\Comprobantes\Details.cshtml" />
+    <Content Include="Views\Comprobantes\Edit.cshtml" />
+    <Content Include="Views\Comprobantes\Index.cshtml" />
+    <Content Include="Views\ComprobanteDetalles\Create.cshtml" />
+    <Content Include="Views\ComprobanteDetalles\Delete.cshtml" />
+    <Content Include="Views\ComprobanteDetalles\Details.cshtml" />
+    <Content Include="Views\ComprobanteDetalles\Edit.cshtml" />
+    <Content Include="Views\ComprobanteDetalles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +348,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

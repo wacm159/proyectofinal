@@ -34,7 +34,7 @@ namespace test
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Permite que la aplicación almacene temporalmente la información del usuario cuando se verifica el segundo factor en el proceso de autenticación de dos factores.
@@ -58,11 +58,16 @@ namespace test
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            NewMethod(app);
+        }
+
+        private static void NewMethod(IAppBuilder app)
+        {
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "948672483188-g4og7610nb06vo1pv5mtk5of7ms68am2.apps.googleusercontent.com",
+                ClientSecret = "BE9OzLfQ5wy1Km58EmJXOCBE"
+            });
         }
     }
 }
