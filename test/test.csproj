@@ -332,6 +332,7 @@
     <Content Include="Views\ComprobanteDetalles\Details.cshtml" />
     <Content Include="Views\ComprobanteDetalles\Edit.cshtml" />
     <Content Include="Views\ComprobanteDetalles\Index.cshtml" />
+    <Content Include="Views\Home\Facturar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

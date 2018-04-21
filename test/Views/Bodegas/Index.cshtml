@@ -4,36 +4,38 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1>BODEGAS</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th></th>
-    </tr>
+<h3 class="page-header">
+    @Html.ActionLink("Crear Nueva Bodega", "Create")
+    </h3>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
