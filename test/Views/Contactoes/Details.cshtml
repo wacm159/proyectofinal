@@ -1,0 +1,50 @@
+﻿@model test.Models.Contacto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contacto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombrec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombrec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefonoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefonoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mensajec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mensajec)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -29,5 +29,7 @@ namespace test.Models
         public virtual DbSet<Comprobante> Comprobante { get; set; }
         public virtual DbSet<ComprobanteDetalle> ComprobanteDetalle { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<Contacto> Contacto { get; set; }
+        public virtual DbSet<Contactos> Contactos { get; set; }
     }
 }

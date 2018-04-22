@@ -15,4 +15,11 @@ namespace test.Models
     public partial class Producto
     {
     }
+
+    [MetadataType(typeof(ContactosMetadata))]
+    public partial class Contactos
+    {
+
+    }
 }
+    

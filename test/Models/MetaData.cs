@@ -23,4 +23,24 @@ namespace test.Models
         [Remote("ValidarNombreP", "Productoes", ErrorMessage = "Campo Duplicado")]
         public string Nombre { get; set; }
     }
+
+    public class ContactosMetadata
+    {
+        [Required]
+        [Display(Name = "Nombre Usuario")]
+        public string nombre { get; set; }
+
+        [Display(Name = "Correo Electronico")]
+        [Required(ErrorMessage = "La direccion de correo es requerida")]
+        [EmailAddress(ErrorMessage = "Direccion de correo Invalida")]
+        public string email { get; set; }
+
+        [Required]
+        [Display(Name = "Telefono")]
+        public string telefono { get; set; }
+
+        [Required]
+        [Display(Name = "Mensaje")]
+        public string mensaje { get; set; }
+    }
 }

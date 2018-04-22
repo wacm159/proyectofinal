@@ -12,6 +12,8 @@
         <AssociationConnector Association="FacturadorModel.FK_Producto_Bodega" ManuallyRouted="false" />
         <AssociationConnector Association="FacturadorModel.FK_ComprobanteDetalle_Comprobante1" ManuallyRouted="false" />
         <AssociationConnector Association="FacturadorModel.FK_ComprobanteDetalle_Producto" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FacturadorModel.Contacto" Width="1.5" PointX="7.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacturadorModel.Contactos" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

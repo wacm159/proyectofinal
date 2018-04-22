@@ -195,6 +195,7 @@
     <Compile Include="Controllers\BodegasController.cs" />
     <Compile Include="Controllers\ComprobanteDetallesController.cs" />
     <Compile Include="Controllers\ComprobantesController.cs" />
+    <Compile Include="Controllers\ContactosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
@@ -209,6 +210,12 @@
       <DependentUpon>FacturadorModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ComprobanteDetalle.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contacto.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contactos.cs">
       <DependentUpon>FacturadorModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FacturadorModel.Context.cs">
@@ -333,6 +340,16 @@
     <Content Include="Views\ComprobanteDetalles\Edit.cshtml" />
     <Content Include="Views\ComprobanteDetalles\Index.cshtml" />
     <Content Include="Views\Home\Facturar.cshtml" />
+    <Content Include="Views\Contactoes\Create.cshtml" />
+    <Content Include="Views\Contactoes\Delete.cshtml" />
+    <Content Include="Views\Contactoes\Details.cshtml" />
+    <Content Include="Views\Contactoes\Edit.cshtml" />
+    <Content Include="Views\Contactoes\Index.cshtml" />
+    <Content Include="Views\Contactos\Create.cshtml" />
+    <Content Include="Views\Contactos\Delete.cshtml" />
+    <Content Include="Views\Contactos\Details.cshtml" />
+    <Content Include="Views\Contactos\Edit.cshtml" />
+    <Content Include="Views\Contactos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
