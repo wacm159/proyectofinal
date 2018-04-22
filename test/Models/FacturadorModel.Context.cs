@@ -31,5 +31,9 @@ namespace test.Models
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Contacto> Contacto { get; set; }
         public virtual DbSet<Contactos> Contactos { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }

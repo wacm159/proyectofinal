@@ -192,6 +192,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AutexterController.cs" />
     <Compile Include="Controllers\BodegasController.cs" />
     <Compile Include="Controllers\ComprobanteDetallesController.cs" />
     <Compile Include="Controllers\ComprobantesController.cs" />
@@ -203,6 +204,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaims.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>FacturadorModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Bodega.cs">
       <DependentUpon>FacturadorModel.tt</DependentUpon>
     </Compile>
@@ -275,6 +288,7 @@
       <DependentUpon>FacturadorModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\intro.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -350,6 +364,11 @@
     <Content Include="Views\Contactos\Details.cshtml" />
     <Content Include="Views\Contactos\Edit.cshtml" />
     <Content Include="Views\Contactos\Index.cshtml" />
+    <Content Include="Views\Autexter\Create.cshtml" />
+    <Content Include="Views\Autexter\Delete.cshtml" />
+    <Content Include="Views\Autexter\Details.cshtml" />
+    <Content Include="Views\Autexter\Edit.cshtml" />
+    <Content Include="Views\Autexter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
